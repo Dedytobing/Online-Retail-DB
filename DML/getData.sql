@@ -15,11 +15,14 @@ SELECT
     Transaksi.id_transaksi,
     Pelanggan.nama AS nama_pelanggan,
     Produk.namaProduk,
-    Transaksi.tanggal_transaksi
+    Transaksi.jumlah_produk,
+    Transaksi.tanggal_transaksi,
+    Transaksi.totalharga
 FROM Transaksi
 LEFT JOIN Pelanggan ON Transaksi.id_pelanggan = Pelanggan.id_pelanggan
 LEFT JOIN Produk ON Transaksi.id_produk = Produk.id_produk;
 
--- Menampilkan data produk beserta nama kategori dari tabel Produk
+
+-- Menampilkan data produk dari tabel Produk
 select id_produk,namaProduk,nama_kategori,harga from produk 
 left join Kategori on produk.id_kategori=kategori.id_Kategori;
